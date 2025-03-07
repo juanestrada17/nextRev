@@ -16,7 +16,7 @@ export default async function Page(props: {
   const searchParams = await props.searchParams;
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
-  // Returns total number of pages based on the search query
+  // Returns total number of pages based on the search query. ITEMS_PER_PAGE is capped at 6
   const totalPages = await fetchInvoicesPages(query);
   return (
     <div className="w-full">
