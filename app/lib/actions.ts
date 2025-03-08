@@ -60,7 +60,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
     // Ensures fresh data will be fetched from the server
   } catch (e) {
     return {
-      message: "Error creating invoice",
+      message: "Error creating invoice" + e,
     };
   }
   revalidatePath("/dashboard/invoices");
@@ -99,7 +99,7 @@ export async function updateInvoice(
   `;
   } catch (e) {
     return {
-      message: "Error updating invoice",
+      message: "Error updating invoice" + e,
     };
   }
   revalidatePath("/dashboard/invoices");
